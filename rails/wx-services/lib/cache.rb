@@ -58,6 +58,15 @@ module Cache
       WxPeriod.add_to_db(pd, location) unless pd.avgTemp == nil
     end
 
+    #check this_year
+    this_year = PastSummary.find_by_period_and_location(:this_year, location)
+
+    if this_year.nil? or this_year.updated_at < 1.hour.ago # TODO make this a config parameter w/ a default of 1 hour
+      pd = WxPeriod.query(Period.this_year, location)
+      WxPeriod.add_to_db(pd, location) unless pd.avgTemp == nil
+    end
+
+
     #update_extremes(archive_record)
   end
 
