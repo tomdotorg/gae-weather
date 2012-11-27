@@ -52,6 +52,8 @@ end
 task :symlink_public, :roles => :app do
   run "ln -nsf #{shared_path}/images
        #{release_path}/public/"
+  run "ln -nsf /var/www/mrtg
+       #{release_path}/public/"
 # fixup .htaccess for passenger
 # example can be found in config/dot_htaccess_passenger
 #  run "cp #{shared_path}/config/dot_htaccess
