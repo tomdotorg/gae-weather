@@ -1,6 +1,6 @@
 # app specific settings
 # from memcache: app, namespace='config'
-#  w = wunderground.Wunderground('KMABEVER3', 'wx2005', 3.0)
+#  w = wunderground.Wunderground('KMABEVER3', 'password', 3.0)
 
 locations:
   01915:
@@ -12,7 +12,7 @@ locations:
     conditions_location: KBVY
     wunderground:
       station: KMABEVER3
-      password: wx2005
+      password: password
       conditions: True
       archives: True
   01915-dev:
@@ -22,7 +22,7 @@ locations:
     upload: True
 #    wunderground:
 #      station: KMABEVER3
-#      password: wx2005
+#      password: password
 #      conditions: True
 #      archives: True
     forecast_location: KBVY

@@ -39,6 +39,6 @@ production:
 #  wunderground:
 #    01915:
 #      id: KMASTONE1
-#      password: wx2005
+#      password: secret
 vservers-development:
   service_password: secret
