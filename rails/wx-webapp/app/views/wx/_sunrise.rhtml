@@ -8,12 +8,19 @@
       <TD ALIGN=CENTER><B>Sunset (Today)</B><br><%= @riseset_today[:set].getlocal.strftime("%I:%M %p") %>
       </TD>
     </TR>
-    <TR>
-      <TD ALIGN="CENTER"><B>Sunrise (In a week)</B><br><%= @riseset_week[:rise].getlocal.strftime("%I:%M %p") %>
-      </TD>
+        <TR>
+          <TD ALIGN="CENTER"><B>Sunrise (In a week)</B><br><%= @riseset_week[:rise].getlocal.strftime("%I:%M %p") %>
+          </TD>
 
-      <TD ALIGN=CENTER><B>Sunset (In a week)</B><br><%= @riseset_week[:set].getlocal.strftime("%I:%M %p") %>
-      </TD>
+          <TD ALIGN=CENTER><B>Sunset (In a week)</B><br><%= @riseset_week[:set].getlocal.strftime("%I:%M %p") %>
+          </TD>
+        </TR>
+        <TR>
+     <TR>
+       <TD ALIGN="CENTER"><B>Sunrise (In two weeks)</B><br><%= @riseset_two_weeks[:rise].getlocal.strftime("%I:%M %p") %>
+        </TD>
+          <TD ALIGN=CENTER><B>Sunset (In two weeks)</B><br><%= @riseset_two_weeks[:set].getlocal.strftime("%I:%M %p") %>
+       </TD>
     </TR>
     <TR>
       <TD ALIGN="CENTER"><B>Sunrise (In a Month)</B><br><%= @riseset_month[:rise].getlocal.strftime("%I:%M %p") %>

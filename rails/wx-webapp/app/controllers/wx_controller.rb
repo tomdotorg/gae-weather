@@ -31,6 +31,7 @@ class WxController < ApplicationController
     @riseset_today = Riseset.riseset(AppConfig.climate_location, Time.now)
     @riseset_available = !(@riseset_today.nil?)
     @riseset_week = Riseset.riseset(AppConfig.climate_location, Time.now + 1.week)
+    @riseset_two_weeks = Riseset.riseset(AppConfig.climate_location, Time.now + 2.weeks)
     @riseset_month = Riseset.riseset(AppConfig.climate_location, Time.now + 1.month)
   end
 
