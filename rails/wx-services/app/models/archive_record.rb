@@ -52,6 +52,7 @@ class ArchiveRecord < ActiveRecord::Base
     self.high_rain_rate_m = inches_to_mm(self.high_rain_rate).round_with_precision(1) unless self.high_rain_rate.nil?
     self.average_wind_speed_m = mph_to_mps(self.average_wind_speed).round_with_precision(1) unless self.average_wind_speed.nil?
     self.high_wind_speed_m = mph_to_mps(self.high_wind_speed).round_with_precision(1) unless self.high_wind_speed.nil?
+    self.et_m = inches_to_mm(self.et).round_with_precision(1) unless self.et.nil?
  end
 
   def self.last_rain_date(location)

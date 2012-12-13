@@ -182,6 +182,7 @@ class WxPeriod < Period
                                        min(extra_temp1) as lowExtraTemp1,
                                        min(average_apparent_temp) as lowWindchill,
                                        sum(rainfall) as rain,
+                                       sum(et) as et,
                                        avg(high_outside_temp) - 65.0 as degreeDays
                                     from archive_records d 
                                     where d.location = '#{location}' 

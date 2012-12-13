@@ -32,4 +32,6 @@ class PeriodStruct < ActionWebService::Struct
 
   member :uv, :int
   member :high_uv, :int
+
+  member :et, :int
 end

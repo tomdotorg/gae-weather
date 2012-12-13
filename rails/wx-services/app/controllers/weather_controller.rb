@@ -143,7 +143,8 @@ class WeatherController < ApplicationController
         :average_uv_index => entry[:average_uv_index],
         :high_uv_index => entry[:high_uv_index],
         :average_solar_radiation => entry[:average_solar_radiation],
-        :high_solar_radiation => entry[:high_solar_radiation]
+        :high_solar_radiation => entry[:high_solar_radiation],
+	:et => entry[:et]
       )
     end
     return structs
@@ -176,7 +177,8 @@ class WeatherController < ApplicationController
         :average_uv_index => entry[:average_uv_index],
         :high_uv_index => entry[:high_uv_index],
         :average_solar_radiation => entry[:average_solar_radiation],
-        :high_solar_radiation => entry[:high_solar_radiation]
+        :high_solar_radiation => entry[:high_solar_radiation],
+	:et => entry[:et]
       )
   end
 
@@ -222,6 +224,7 @@ class WeatherController < ApplicationController
     rec[:high_uv_index] = entry[:high_uv_index] == -9999 ? nil : entry[:high_uv_index]
     rec[:average_solar_radiation] = entry[:average_solar_radiation] == -9999 ? nil : entry[:average_solar_radiation]
     rec[:high_solar_radiation] = entry[:high_solar_radiation] == -9999 ? nil : entry[:high_solar_radiation]
+    rec[:et] = entry[:et] == -9999 ? nil : entry[:et]
 
     if !rec.save
       raise rec.errors.full_messages.to_s
