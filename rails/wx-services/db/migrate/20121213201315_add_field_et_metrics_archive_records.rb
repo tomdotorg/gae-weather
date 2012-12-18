@@ -4,6 +4,6 @@ class AddFieldEtMetricsArchiveRecords < ActiveRecord::Migration
   end
 
   def self.down
-    remove_column :archive_records, :et_m, :float 
+    remove_column :archive_records, :et_m
   end
 end

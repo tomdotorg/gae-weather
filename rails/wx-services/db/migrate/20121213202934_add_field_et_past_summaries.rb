@@ -4,6 +4,6 @@ class AddFieldEtPastSummaries < ActiveRecord::Migration
   end
 
   def self.down
-    remove_column :past_summaries, :et, :float
+    remove_column :past_summaries, :et
   end
 end
