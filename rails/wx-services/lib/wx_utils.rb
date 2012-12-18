@@ -96,7 +96,7 @@ module WxUtils
   # rain conversion
   # 1 inches = 25.4 millimeters
   def inches_to_mm(inches)
-    (inches * 25.4).to_f.round_with_precision(2)
+    (inches * 25.4).to_f.round_with_precision(4)
   end
 
 end
