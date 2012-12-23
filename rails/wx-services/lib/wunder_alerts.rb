@@ -5,7 +5,7 @@ require 'json'
 #TODO avoid dups (location + date + type?)
 class WunderAlertManager < WunderBase
   def alerts
-    a = @w_api.alerts_for(@location)
+    a = @api.alerts_for(@location)
     num_alerts = a["response"]["features"]["alerts"]
     if num_alerts > 0
       a["alerts"].each do |alert|
@@ -31,31 +31,4 @@ class WunderAlertManager < WunderBase
 end
 
 w = WunderAlertManager.new
-w.init
 c = w.alerts()
-
-
-#a["alerts"][0]["message"].gsub("\n", "")
-  #weather station code uniqueness - they use the 'pws:' prefix for weather station codes. So does this wrapper.
-  #w_api.conditions_for("pws:STATIONCODE")
-
-  # to convert epoch to datetime: Time.at(1351429500)
-
-#def conditions
-#  open('http://api.wunderground.com/api/' + @key + '/geolookup/conditions/q/IA/Cedar_Rapids.json') do |f|
-#    json_string = f.read
-#    parsed_json = JSON.parse(json_string)
-#    location = parsed_json['location']['city']
-#    temp_f = parsed_json['current_observation']['temp_f']
-#    print "Current temperature in #{location} is: #{temp_f}\n"
-#  end
-#end
-
-#def current_conditions
-#  return @w_api.conditions_for(@location)
-#end
-
-#def forecast
-#  w_api.forecast_for(@location)
-#end
-
