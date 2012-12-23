@@ -27,7 +27,8 @@ class Alert < ActiveRecord::Base
                         "WC" => "Wind Chill", "WI" => "Wind", "WS" => "Winter Storm",
                         "WW" => "Winter Weather", "ZF" => "Freezing Fog", "ZR" => "Freezing Rain" }
 
-  named_scope :current, lambda {{:conditions => ["expires > ? and location = \'#{AppConfig.noaa_location}\'", Time.now.utc]}}
+  named_scope :current, lambda {{:conditions => ["expires > ? and location = \'#{AppConfig.noaa_location}\'", Time.now.utc], :order => "date DESC"}}
+#  named_scope :by_name,  order => "date ASC"
 
   def self.phenoena_to_s(p)
     PHENOM_MAPPINGS[p]
