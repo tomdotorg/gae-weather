@@ -2,10 +2,9 @@ require 'logger'
 require 'wunderground'
 require 'json'
 
-#TODO avoid dups (location + date + type?)
 class WunderAlertManager < WunderBase
-  def alerts
-    a = @api.alerts_for(@location)
+  def store_alerts
+    a = get_alerts
     num_alerts = a["response"]["features"]["alerts"]
     if num_alerts > 0
       a["alerts"].each do |alert|
@@ -28,7 +27,11 @@ class WunderAlertManager < WunderBase
       end
     end
   end
+
+  def get_alerts
+    @api.alerts_for(@location)
+  end
 end
 
 w = WunderAlertManager.new
-c = w.alerts()
+c = w.store_alerts()
