@@ -10,6 +10,8 @@ common:
   location:         01915
   climate_location: 01915
   noaa_location:    KBVY # EHDL #KBVY # Lelystad EHDL EHAM 
+  wunderground_key: skjfgsadfydsgfjsdjkfg
+  wunderground_lang: EN # used to consume wunderground web services
 # EHAM
 # KBVY
   cwop_id:          CW0169
