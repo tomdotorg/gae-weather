@@ -6,5 +6,6 @@ class WunderBase
     @location = ARGV[0] ||= AppConfig.noaa_location
     @key = AppConfig.wunderground_key
     @api = Wunderground.new(@key)
+    @api.language = AppConfig.wunderground_lang ||= "EN"
   end
 end

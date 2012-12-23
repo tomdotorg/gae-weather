@@ -7,9 +7,10 @@ common:
   longitude:        -70.84997
   location:         01915
   climate_location: 01915
-  noaa_location:    EHAM # use this for both noaa and wunderground forecasts, conditions
+  noaa_location:    KBVY # use this for both noaa and wunderground forecasts, conditions   #EHAM
   wunderground_key: abcabcabcabcabc  # used to consume wunderground web services
-  #KBVY
+  wunderground_lang: EN # used to consume wunderground web services
+
   cwop_id: CW1234
   cwop_lat_long: 5229.28N/00529.93E
   rrd_enabled: true
