@@ -1,15 +1,19 @@
-  <TABLE BORDER WIDTH="360" BGCOLOR="#C0C0C0">
-  <div id="CLIMATE">
+<table id="CLIMATE" border="1" style="width:360;background-color:#C0C0C0;text-align:center">
   <% if @climate_available %>
-    <TR>
-      <TD ALIGN="CENTER"><B>Normal High</B><br>
+    <tr>
+      <td>
+        <b>
+        Normal High
+        </b>
+        <br>
         <%= @normal_high %>
-      </TD>
-      <TD ALIGN="CENTER"><B>Normal Low</B><br>
+      </td>
+      <td>
+        <b>Normal Low
+        </b>
+        <br>
         <%= @normal_low %>
-      </TD>
-
-    </TR>
+      </td>
+    </tr>
   <% end %>
-  </div>
-  </TABLE>
+</table>

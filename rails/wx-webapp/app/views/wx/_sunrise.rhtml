@@ -1,40 +1,61 @@
-  <TABLE BORDER WIDTH="360" BGCOLOR="#C0C0C0">
-  <div id="SUNRISE">
+<!-- SUNRISE -->
+<table border=1 style="width:360;background-color:#C0C0C0;text-align:center" id="SUNRISE">
   <% if @riseset_available %>
-    <TR>
-      <TD ALIGN="CENTER"><B>Sunrise (Today)</B><br><%= @riseset_today[:rise].getlocal.strftime("%I:%M %p") %>
-      </TD>
-      <TD ALIGN=CENTER><B>Sunset (Today)</B><br><%= @riseset_today[:set].getlocal.strftime("%I:%M %p") %>
-      </TD>
-      <TD ALIGN=CENTER><B>Daylight (Today)</B><br><%= @riseset_today[:daylight].strftime("%H:%M") %>
-      </TD>
-    </TR>
-        <TR>
-          <TD ALIGN="CENTER"><B>Sunrise (In a week)</B><br><%= @riseset_week[:rise].getlocal.strftime("%I:%M %p") %>
-          </TD>
-          <TD ALIGN=CENTER><B>Sunset (In a week)</B><br><%= @riseset_week[:set].getlocal.strftime("%I:%M %p") %>
-          </TD>
-          <TD ALIGN=CENTER><B>Daylight (In a week)</B><br><%= @riseset_week[:daylight].strftime("%H:%M") %>
-          </TD>
-        </TR>
-        <TR>
-     <TR>
-       <TD ALIGN="CENTER"><B>Sunrise (In two weeks)</B><br><%= @riseset_two_weeks[:rise].getlocal.strftime("%I:%M %p") %>
-        </TD>
-          <TD ALIGN=CENTER><B>Sunset (In two weeks)</B><br><%= @riseset_two_weeks[:set].getlocal.strftime("%I:%M %p") %>
-       </TD>
-       <TD ALIGN=CENTER><B>Daylight (In two weeks)</B><br><%= @riseset_two_weeks[:daylight].strftime("%H:%M") %>
-       </TD>
-    </TR>
-    <TR>
-      <TD ALIGN="CENTER"><B>Sunrise (In a month)</B><br><%= @riseset_month[:rise].getlocal.strftime("%I:%M %p") %>
-      </TD>
-      <TD ALIGN=CENTER><B>Sunset (In a month)</B><br><%= @riseset_month[:set].getlocal.strftime("%I:%M %p") %>
-      </TD>
-      <TD ALIGN=CENTER><B>Daylight (In a month)</B><br><%= @riseset_month[:daylight].strftime("%H:%M") %>
-      </TD>
-    </TR>
+    <tr>
+      <td>>
+        <b>Sunrise (Today)
+        </b>
+        <br><%= @riseset_today[:rise].getlocal.strftime("%I:%M %p") %>
+      </td>
+      <td>
+        <b>Sunset (Today)</b>
+        <br><%= @riseset_today[:set].getlocal.strftime("%I:%M %p") %>
+      </td>
+      <td>
+        <b>Daylight (Today)</b>
+        <br><%= @riseset_today[:daylight].strftime("%H:%M") %>
+      </td>
+    <tr>
+      <td>
+        <b>Sunrise (In a week)</b>
+        <br><%= @riseset_week[:rise].getlocal.strftime("%I:%M %p") %>
+      </td>
+      <td>
+        <b>Sunset (In a week)</b>
+        <br><%= @riseset_week[:set].getlocal.strftime("%I:%M %p") %>
+      </td>
+      <td>
+        <b>Daylight (In a week)</b>
+        <br><%= @riseset_week[:daylight].strftime("%H:%M") %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Sunrise (In two weeks)</b>
+        <br><%= @riseset_two_weeks[:rise].getlocal.strftime("%I:%M %p") %>
+      </td>
+       <td>
+         <b>Sunset (In two weeks)</b>
+         <br><%= @riseset_two_weeks[:set].getlocal.strftime("%I:%M %p") %>
+       </td>
+       <td>
+         <b>Daylight (In two weeks)</b>
+         <br><%= @riseset_two_weeks[:daylight].strftime("%H:%M") %>
+       </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Sunrise (In a month)</b>
+        <br><%= @riseset_month[:rise].getlocal.strftime("%I:%M %p") %>
+      </td>
+      <td>
+        <b>Sunset (In a month)</b>
+        <br><%= @riseset_month[:set].getlocal.strftime("%I:%M %p") %>
+      </td>
+      <td>
+        <b>Daylight (In a month)</b>
+        <br><%= @riseset_month[:daylight].strftime("%H:%M") %>
+      </td>
+    </tr>
   <% end %>
-
-  </div>
-  </TABLE>
+</table>

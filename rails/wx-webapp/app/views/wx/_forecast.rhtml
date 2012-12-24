@@ -40,7 +40,7 @@
           </td>
         <% end %>
         <td style="text-align:left">
-          <%= pd.text %>
+          <%= AppConfig.wunderground_is_metric ? pd.textmetric : pd.text %>
         </td>
       </tr>
     <% end %>
@@ -48,7 +48,6 @@
     <tr>
       <th colspan="3" style="font-size:1.5em">
         Forecast Temporarily Unavailable
-        <p>
       </th>
     </tr>
   <% end %>

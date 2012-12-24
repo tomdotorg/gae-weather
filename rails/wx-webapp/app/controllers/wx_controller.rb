@@ -13,7 +13,7 @@ class WxController < ApplicationController
 
   def get_noaa_forecast
     @forecast = NoaaForecast.latest(AppConfig.noaa_location)
-    @wunder_forecast = WunderForecast.latest(AppConfig.noaa_location)
+    @wunder_forecast = WunderForecast.latest(AppConfig.wunderground_location)
   end
 
   def get_climate
@@ -38,7 +38,7 @@ class WxController < ApplicationController
   def get_airport_conditions
     noaa_conditions = NoaaConditions.latest(AppConfig.noaa_location)
     if noaa_conditions ==  nil || noaa_conditions.as_of.localtime < 2.hours.ago
-      noaa_conditions = WunderConditions.latest(AppConfig.noaa_location)
+      noaa_conditions = WunderConditions.latest(AppConfig.wunderground_location)
     end
     if (noaa_conditions != nil && noaa_conditions.as_of.localtime > 2.hours.ago)
       @conditions = noaa_conditions.conditions

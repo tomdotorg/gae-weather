@@ -10,6 +10,8 @@ common:
   noaa_location:    KBVY # use this for both noaa and wunderground forecasts, conditions   #EHAM
   wunderground_key: abcabcabcabcabc  # used to consume wunderground web services
   wunderground_lang: EN # used to consume wunderground web services
+  wunderground_location: 01915  # used for forecasts, alerts in wunderground web services
+  wunderground_is_metric: false  # for forecasts which have text in metric too - wunderground web services
 
   cwop_id: CW1234
   cwop_lat_long: 5229.28N/00529.93E
