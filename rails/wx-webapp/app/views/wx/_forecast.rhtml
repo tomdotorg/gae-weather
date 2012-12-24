@@ -18,7 +18,7 @@
       <% if !pd.icon_location.nil? %>
           <td><img border=0 src="<%= pd.icon_location %>"></td>
       <% end %>
-      <td><%= pd.text %></td>
+      <td><%= AppConfig.wunderground_is_metric ? pd.textmetric : pd.text %></td>
      </tr>
     <% end %>
 <% else %>

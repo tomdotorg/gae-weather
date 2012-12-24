@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121223131217) do
+ActiveRecord::Schema.define(:version => 20121222154021) do
 
   create_table "alerts", :force => true do |t|
     t.string   "location"
@@ -391,7 +391,6 @@ ActiveRecord::Schema.define(:version => 20121223131217) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "wunder_forecast_id"
-    t.integer  "pdnum"
   end
 
   create_table "wunder_forecast_periods", :force => true do |t|
@@ -401,14 +400,11 @@ ActiveRecord::Schema.define(:version => 20121223131217) do
     t.integer  "wunder_forecast_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "textmetric"
-    t.integer  "pdnum"
-    t.integer  "pop"
   end
 
   create_table "wunder_forecasts", :force => true do |t|
     t.string   "location",       :limit => 30, :null => false
-    t.text     "forecast_raw"
+    t.text     "forecast_xml"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "last_retrieved"
