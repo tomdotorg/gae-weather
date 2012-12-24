@@ -13,6 +13,7 @@
   </head>
 
   <body style="background-color:#FFFFFF;background:<%= image_path("sky-bkgd1.jpg") %>" >
+    <center>
     <table border="0" width="100%" cellspacing="0" cellpadding="3">
       <tr>
         <td width="100%" bgcolor="#000080"><font face="Arial Black" color="#FFFFFF"><big>
@@ -81,7 +82,7 @@
 <% cache(:action => "index", :action_suffix => "google_analytics") do %>
   <%= render(:partial => "google_analytics", :layout => false  ) %>
 <% end %>
-
+</center>
 </body>
 
 </html>
