@@ -12,6 +12,9 @@ common:
   noaa_location:    KBVY # EHDL #KBVY # Lelystad EHDL EHAM 
   wunderground_key: skjfgsadfydsgfjsdjkfg
   wunderground_lang: EN # used to consume wunderground web services
+  wunderground_location: 01915  # used for forecasts, alerts in wunderground web services
+  wunderground_is_metric: false  # for forecasts which have text in metric too - wunderground web services
+
 # EHAM
 # KBVY
   cwop_id:          CW0169
