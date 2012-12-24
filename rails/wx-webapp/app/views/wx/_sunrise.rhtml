@@ -2,7 +2,7 @@
 <table border=1 style="width:360;background-color:#C0C0C0;text-align:center" id="SUNRISE">
   <% if @riseset_available %>
     <tr>
-      <td>>
+      <td>
         <b>Sunrise (Today)
         </b>
         <br><%= @riseset_today[:rise].getlocal.strftime("%I:%M %p") %>
