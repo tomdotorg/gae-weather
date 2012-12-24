@@ -8,7 +8,7 @@ class WunderForecastManager < WunderBase
 
   def store_10_day_forecasts
     a = get_10_day_forecast
-    forecast = WunderForecast.find_or_create_by_location(AppConfig.noaa_location)
+    forecast = WunderForecast.find_or_create_by_location(AppConfig.wunderground_location)
     forecast.wunder_forecast_periods.destroy_all
     forecast.wunder_forecast_period_longs.destroy_all
     forecast.creation_time = Time.parse(a["date"]).utc
