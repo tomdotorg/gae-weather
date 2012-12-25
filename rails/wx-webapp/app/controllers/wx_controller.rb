@@ -1,4 +1,4 @@
-require 'noaa_forecast'
+#require 'noaa_forecast'
 
 class WxController < ApplicationController
   include REXML
@@ -9,6 +9,15 @@ class WxController < ApplicationController
     get_noaa_forecast
     get_climate
     get_riseset
+    get_alerts
+  end
+
+  def get_alerts
+    @alerts = Alert.current.to_a
+    @alert_list = []
+    @alerts.each do |a|
+      @alert_list << a.description
+    end
   end
 
   def get_noaa_forecast
