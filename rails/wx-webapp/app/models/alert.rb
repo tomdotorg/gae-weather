@@ -29,7 +29,7 @@ class Alert < ActiveRecord::Base
 
   named_scope :current, lambda {{:conditions => ["expires > ? and location = \'#{AppConfig.wunderground_location}\'", Time.now.utc], :order => "date DESC"}}
 
-  def self.phenoena_to_s(p)
+  def self.phenomena_to_s(p)
     PHENOM_MAPPINGS[p]
   end
 
