@@ -96,7 +96,7 @@
       Visibility <%= @visibility %> miles
       </b>
       <br/>
-      Observed at Beverly Airport <%= distance_of_time_in_words_to_now(@conditions_date, false) %> ago
+      Observed at <%= @conditions_location_desc %> <%= distance_of_time_in_words_to_now(@conditions_date, false) %> ago
     </td>
   </tr>
 <% end # if @current != nil %>

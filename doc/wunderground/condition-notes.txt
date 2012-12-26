@@ -1,0 +1,78 @@
+--- 
+dewpoint_c: -10
+dewpoint_f: 14
+estimated: {}
+
+ob_url: http://www.wunderground.com/cgi-bin/findweather/getForecast?query=42.562908,-70.849327
+forecast_url: http://www.wunderground.com/US/MA/Beverly.html
+precip_1hr_in: "0.00"
+solarradiation: "0"
+local_tz_offset: "-0500"
+windchill_string: 21 F (-6 C)
+heat_index_string: NA
+pressure_in: "30.27"
+wind_gust_kph: 0
+local_epoch: "1356517808"
+station_id: KMABEVER3
+precip_1hr_metric: " 0"
+wind_gust_mph: 0
+wind_string: Calm
+observation_epoch: "1356517795"
+history_url: http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KMABEVER3
+temperature_string: 21.3 F (-5.9 C)
+observation_time_rfc822: Wed, 26 Dec 2012 05:29:55 -0500
+icon: clear
+precip_today_metric: "0"
+wind_kph: 0.0
+wind_mph: 0.0
+wind_degrees: 14
+visibility_km: "16.1"
+feelslike_c: "-6"
+feelslike_f: "21"
+windchill_c: "-6"
+windchill_f: "21"
+local_tz_short: EST
+observation_time: Last Updated on December 26, 5:29 AM EST
+UV: "0"
+heat_index_c: NA
+heat_index_f: NA
+dewpoint_string: 14 F (-10 C)
+pressure_mb: "1025"
+temp_c: -5.9
+temp_f: 21.3
+weather: Clear
+local_time_rfc822: Wed, 26 Dec 2012 05:30:08 -0500
+icon_url: http://icons-ak.wxug.com/i/c/k/nt_clear.gif
+precip_today_in: "0.00"
+precip_1hr_string: 0.00 in ( 0 mm)
+feelslike_string: 21 F (-6 C)
+pressure_trend: +
+wind_dir: NNE
+relative_humidity: 76%
+local_tz_long: America/New_York
+display_location: 
+  state: MA
+  elevation: "23.00000000"
+  country: US
+  state_name: Massachusetts
+  full: Beverly, MA
+  latitude: "42.56645966"
+  zip: 01915
+  country_iso3166: US
+  city: Beverly
+  longitude: "-70.85327911"
+precip_today_string: 0.00 in (0 mm)
+visibility_mi: "10.0"
+observation_location: 
+  state: Massachusetts
+  elevation: 72 ft
+  country: US
+  full: Experimental Beverly WX, Beverly, Massachusetts
+  latitude: "42.562908"
+  country_iso3166: US
+  city: Experimental Beverly WX, Beverly
+  longitude: "-70.849327"
+image: 
+  url: http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png
+  link: http://www.wunderground.com
+  title: Weather Underground
