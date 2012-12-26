@@ -1,12 +1,37 @@
 module WxHelper
-  def highlight_alerts(alerts) # this does not work but demonstrates the purpose of the helper called from the view
-    s = "<blink>"
-    alerts.each do |a|
-      # do something with the alerts in a and highlighting based on level (info, warning, etc)
-      s << a << "&nbsp"
+
+def format_alert(alerts)
+    if !alerts.nil?
+      a = []
+      alerts.each do |i|
+        if i["significance"] != "S" && i["significance"] != "N"
+          dep = i["description"]
+          a << link_to("#{dep}<br>", "#"+i["phenomena"])
+        end
+      end
+      return a.to_s
     end
-    # should return s here once s has meaning
-    return s << "</blink>"
+end
+
+  def alerts_table(alerts)
+    if !alerts.nil?
+      a = []
+      alerts.each do |i|
+        n = i["message"].strip.gsub("\n", "<br>")
+        a << "<tr>
+<th id=\"#{i["phenomena"]}\">
+#{i["description"]}
+</th>
+</tr>
+<tr>
+<td>
+#{n}
+</td>
+</tr>"
+      end
+    end
+    return a.to_s
   end
+
 end
 

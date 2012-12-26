@@ -14,17 +14,26 @@
 
   <body style="background-color:#FFFFFF;background-image:url(<%= image_path('sky-bkgd1.jpg') %>);" >
     <center>
-    <table border="0" width="100%" cellspacing="0" cellpadding="3">
-      <tr>
-        <td width="100%" bgcolor="#000080"><font face="Arial Black" color="#FFFFFF"><big>
-          <strong>Live Weather in Beverly, MA</strong></big></font>
-        </td>
-      </tr>
-    </table>
+    <div style="background-color:#000080;font-family:'Arial Black';color:#FFFFFF;text-align:left;width:100%;font-size:1.25em">
+      <strong>Live Weather in Beverly, MA</strong>
+    </div>
     <p>
     <% cache(:action => "index", :action_suffix => "sunapplet") do %>
       <%= render(:partial => "sunapplet", :layout => false  ) %>
     <% end %>
+      <br>
+      <table border=1 style="background-color:#C0C0C0;text-align:center;width:360px">
+        <tr>
+          <td>
+            <%= format_alert(@alerts) %>
+          </td>
+        </tr>
+      </table>
+        <!--span style="color:#0000ff">&nbsp- This is a warning&nbsp</span>
+        <span style="color:#0000FF">&nbsp- This is a forecast&nbsp</span>
+        <span style="color:#0000FF">&nbsp- This is a watch&nbsp</span>
+        <span style="color:#0000FF;font-size:0.75em">&nbsp- This is an outlook&nbsp</span>
+        <span style="color:#0000FF;font-size:0.75em;">&nbsp- This is an advisory</span-->
     <table>
       <% if @current.nil? %>
         <p>
@@ -73,6 +82,10 @@
 <% cache(:action => "index", :action_suffix => "tides") do %>
   <%= render(:partial => "tides", :layout => false  ) %>
 <% end %>
+
+<table>
+  <%= render(:partial => "alerts") %>
+</table>
 
 <% cache(:action => "index", :action_suffix => "info") do %>
   <%= render(:partial => "info", :layout => false  ) %>
