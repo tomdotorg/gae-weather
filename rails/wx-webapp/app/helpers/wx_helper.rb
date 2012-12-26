@@ -18,10 +18,15 @@ end
       a = []
       alerts.each do |i|
         n = i["message"].strip.gsub("\n", "<br>")
-        a << "<tr><th id=\"#{i["phenomena"]}\">#{i["description"]}</th></tr><tr><td>#{n}</td></tr>"
+        start = i["date"].localtime
+        expire = i["expires"].localtime
+        a << "<tr><th id=\"#{i["phenomena"]}\">#{i["description"]}</th></tr><tr><td>" +
+            "In effect from #{start.strftime("%I:%M %p on %A")}<br>" +
+            "until #{expire.strftime("%I:%M %p on %A")}.</td></tr><tr><td>#{n}</td></tr>"
       end
     end
     return a.to_s
   end
+
 end
 
