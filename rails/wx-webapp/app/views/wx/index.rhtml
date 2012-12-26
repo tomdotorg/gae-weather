@@ -22,13 +22,15 @@
       <%= render(:partial => "sunapplet", :layout => false  ) %>
     <% end %>
       <br>
-      <table border=1 style="background-color:#C0C0C0;text-align:center;width:360px">
-        <tr>
-          <td>
-            <%= format_alert(@alerts) %>
-          </td>
-        </tr>
-      </table>
+      <% if @alerts and @alerts.length > 0 %>
+        <table border=1 style="background-color:#C0C0C0;text-align:center;width:360px">
+          <tr>
+            <td>
+              <%= format_alert(@alerts) %>
+            </td>
+          </tr>
+        </table>
+      <% end %>
         <!--span style="color:#0000ff">&nbsp- This is a warning&nbsp</span>
         <span style="color:#0000FF">&nbsp- This is a forecast&nbsp</span>
         <span style="color:#0000FF">&nbsp- This is a watch&nbsp</span>
