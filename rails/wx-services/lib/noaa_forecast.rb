@@ -58,9 +58,9 @@ class NOAAForecastUtils
     log.debug(@xml)
     @doc = Document.new(@xml)
     log.debug("doc = " + @doc.to_s)
+    icon_base = (@doc.elements['//icon-location'].text + '/').to_s
     forecast = NoaaForecast.find_or_create_by_location(LOCATION)
     forecast.forecast_periods.destroy_all
-    icon_base = (@doc.elements['//icon-location'].text + '/').to_s
     forecast.forecast_xml = @xml
     log.debug("creation time raw: #{@doc.elements['//creationTime']}")
     forecast.creation_time = Time.local(*ParseDate.parsedate(@doc.elements['//creationTime'].text)).utc
