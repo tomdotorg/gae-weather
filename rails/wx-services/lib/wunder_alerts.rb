@@ -5,6 +5,7 @@ require 'json'
 class WunderAlertManager < WunderBase
   def store_alerts
     a = get_alerts
+    Alert.destroy_all(:location => @location)
     num_alerts = a["response"]["features"]["alerts"]
     if num_alerts > 0
       a["alerts"].each do |alert|
