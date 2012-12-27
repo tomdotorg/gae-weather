@@ -45,14 +45,15 @@ class WxController < ApplicationController
   end
 
   def get_airport_conditions
-    noaa_conditions = NoaaConditions.latest(AppConfig.noaa_location)
-    if noaa_conditions ==  nil || noaa_conditions.as_of.localtime < 2.hours.ago
-      noaa_conditions = WunderConditions.latest(AppConfig.wunderground_location)
+    wunder_conditions = WunderConditions.latest(AppConfig.wunderground_location)
+    if wunder_conditions ==  nil || wunder_conditions.as_of.localtime < 2.hours.ago
+      wunder_conditions = NoaaConditions.latest(AppConfig.noaa_location)
     end
-    if (noaa_conditions != nil && noaa_conditions.as_of.localtime > 2.hours.ago)
-      @conditions = noaa_conditions.conditions
-      @conditions_date = noaa_conditions.as_of.localtime
-      @visibility = noaa_conditions.visibility
+    if (wunder_conditions != nil && wunder_conditions.as_of.localtime > 2.hours.ago)
+      @conditions = wunder_conditions.conditions
+      @conditions_date = wunder_conditions.as_of.localtime
+      @visibility = wunder_conditions.visibility
+      @conditions_location_desc = wunder_conditions.location_desc
     end
   end
 
@@ -74,7 +75,7 @@ class WxController < ApplicationController
   end
   
   def get_current_conditions
-    @airport_conditions = get_airport_conditions # TODO nothing in @airport_conditions
+    get_airport_conditions
     @current = CurrentCondition.find_by_location(AppConfig.location)
     @dark = Riseset.dark?(AppConfig.location, Time.now.utc)
     # kludge for time sync problems btw station time and web server

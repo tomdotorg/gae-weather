@@ -13,6 +13,7 @@ class WunderConditionManager < WunderBase
     a.conditions = c["weather"]
     a.visibility = c["visibility_mi"]
     a.visibility_m = c["visibility_km"]
+    a.location_desc = c["display_location"]["full"]
     a.as_of = Time.parse(c["observation_time_rfc822"])
     a.icon_url = c["icon_url"]
     a.save!

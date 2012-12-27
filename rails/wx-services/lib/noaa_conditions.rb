@@ -31,6 +31,9 @@ class NOAAConditionsWriter
   visibility = doc.elements[1].elements["visibility_mi"].text.to_i
   log.debug("visibility: " + visibility.to_s)
 
+  location_desc = doc.elements[1].elements["location"].text
+  log.debug("location_desc: " + location_desc)
+
   conditions = doc.elements[1].elements["weather"].text
   log.debug("conditions: " + conditions)
 
@@ -41,6 +44,7 @@ class NOAAConditionsWriter
   record[:as_of] = as_of
   record[:conditions] = conditions
   record[:visibility] = visibility
+  record[:location_desc] = location_desc
   record[:updated_at] = Time.now
   log.debug(record)
   record.save!

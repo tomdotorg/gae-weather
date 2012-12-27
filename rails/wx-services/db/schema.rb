@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121225131217) do
+ActiveRecord::Schema.define(:version => 20121226191046) do
 
   create_table "alerts", :force => true do |t|
     t.string   "location"
@@ -204,6 +204,7 @@ ActiveRecord::Schema.define(:version => 20121225131217) do
     t.datetime "as_of"
     t.integer  "visibility"
     t.text     "conditions_xml"
+    t.string   "location_desc"
   end
 
   add_index "noaa_conditions", ["as_of"], :name => "index_noaa_conditions_on_as_of"
@@ -376,6 +377,7 @@ ActiveRecord::Schema.define(:version => 20121225131217) do
     t.integer  "visibility"
     t.integer  "visibility_m"
     t.string   "icon_url"
+    t.string   "location_desc"
   end
 
   add_index "wunder_conditions", ["location"], :name => "index_wunder_conditions_on_location", :unique => true
