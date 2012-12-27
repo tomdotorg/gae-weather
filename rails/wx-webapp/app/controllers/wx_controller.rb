@@ -26,10 +26,14 @@ class WxController < ApplicationController
   end
 
   def get_climate
-    c = Climate.find_by_location_and_month_and_day(AppConfig.climate_location,Time.now.localtime.month, Time.now.localtime.day)
+    c = Climate.find_by_location_and_month_and_day(AppConfig.wunderground_location,Time.now.localtime.month, Time.now.localtime.day)
     if !c.nil?
       @normal_high = c.avg_high_temp
       @normal_low = c.avg_low_temp
+      @record_high = c.record_high_temp
+      @record_high_temp_year = c.record_high_temp_year
+      @record_low = c.record_low_temp
+      @record_low_temp_year = c.record_low_temp_year
       @climate_available = true
     else
       @climate_available = false
