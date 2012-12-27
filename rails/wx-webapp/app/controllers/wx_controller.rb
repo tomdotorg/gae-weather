@@ -1,4 +1,4 @@
-#require 'noaa_forecast'
+require 'wunder_almanac'
 
 class WxController < ApplicationController
   include REXML
@@ -26,7 +26,8 @@ class WxController < ApplicationController
   end
 
   def get_climate
-    c = Climate.find_by_location_and_month_and_day(AppConfig.wunderground_location,Time.now.localtime.month, Time.now.localtime.day)
+    wm = WunderAlmanacManager.new
+    c = wm.get_almanac
     if !c.nil?
       @normal_high = c.avg_high_temp
       @normal_low = c.avg_low_temp

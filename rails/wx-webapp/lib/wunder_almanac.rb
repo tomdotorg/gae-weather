@@ -6,12 +6,11 @@ class WunderAlmanacManager < WunderBase
   log = Logger.new(STDOUT)
   log.level = Logger::INFO
 
-  def store_almanac
-    c = get_almanac
+  def get_almanac
     d = Time.now.at_midnight.utc
-    # if we need to..
     a = Climate.find_or_initialize_by_location_and_month_and_day(@location, d.month, d.day)
     if a.new_record? or a.updated_at < d
+      c = @api.almanac_for(@location)["almanac"]
       a.avg_high_temp = c["temp_high"]["normal"]["F"].to_i
       a.avg_low_temp = c["temp_low"]["normal"]["F"].to_i
       a.record_high_temp = c["temp_high"]["record"]["F"].to_i
@@ -21,12 +20,6 @@ class WunderAlmanacManager < WunderBase
       a.mean_temp = (a.avg_high_temp + a.avg_low_temp) / 2
       a.save!
     end
-  end
-
-  def get_almanac
-    @api.almanac_for(@location)["almanac"]
+    return a
   end
 end
-
-w = WunderAlmanacManager.new
-c = w.store_almanac
