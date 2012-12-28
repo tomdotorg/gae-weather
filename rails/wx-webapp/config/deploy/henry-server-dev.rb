@@ -28,7 +28,7 @@ set :branch, "henry-ui"
 # If you aren't deploying to /u/apps/#{application} on the target
 # servers (which is the default), you can specify the actual location
 # via the :deploy_to variable:
-set :deploy_to, "~/apps/#{application}"
+set :deploy_to, "/home/henry/apps/#{application}"
 
 role :app, "server"
 role :web, "server"
@@ -46,7 +46,7 @@ task :symlink_config_yml, :roles => :app do
        #{release_path}/config/config.yml"
   run "ln -nsf #{shared_path}/config/service_providers.yml
        #{release_path}/config/service_providers.yml"
-  run "mkdir #{release_path}/tmp"
+#  run "mkdir #{release_path}/tmp"
 end
 
 #desc "Symlink root directory under public_html"
