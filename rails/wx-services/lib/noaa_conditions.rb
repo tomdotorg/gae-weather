@@ -44,6 +44,7 @@ class NOAAConditionsWriter
   record[:as_of] = as_of
   record[:conditions] = conditions
   record[:visibility] = visibility
+  record[:visibility_m] = visibility * 1.6
   record[:location_desc] = location_desc
   record[:updated_at] = Time.now
   log.debug(record)
