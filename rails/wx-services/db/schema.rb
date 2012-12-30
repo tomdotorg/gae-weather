@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121226191046) do
+ActiveRecord::Schema.define(:version => 20121230001209) do
 
   create_table "alerts", :force => true do |t|
     t.string   "location"
@@ -284,6 +284,7 @@ ActiveRecord::Schema.define(:version => 20121226191046) do
     t.decimal  "extra_temp1_m",                              :precision => 4, :scale => 1
     t.decimal  "high_extra_temp1_m",                         :precision => 4, :scale => 1
     t.decimal  "low_extra_temp1_m",                          :precision => 4, :scale => 1
+    t.integer  "et_m"
   end
 
   add_index "old_archive_records", ["average_apparent_temp"], :name => "index_old_archive_records_on_average_apparent_temp"
