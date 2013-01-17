@@ -1,2 +1,4 @@
+LGPL License
+
 This is the base essentials of the google app engine portion of the org.tom.weather project. Many unresolved dependencies with that project, so this is more about slimming down the cloning of that repo than making this app complete or usable. That will come over time - maybe.
 
